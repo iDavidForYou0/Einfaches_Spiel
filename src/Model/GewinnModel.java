@@ -1,4 +1,5 @@
 package Model;
+import java.util.Random;
 
 public class GewinnModel {
     private int gesamtPunkte;
@@ -11,19 +12,20 @@ public class GewinnModel {
     }
 
     public int getGesamtPunkte() {
-        return gesamtPunkte;
+        return this.gesamtPunkte;
     }
 
     public int getComputerAnzahl() {
-
+        return this.computerAnzahl;
     }
 
     public int getRundenErgebnis() {
-
+        return this.rundenErgebnis;
     }
 
     public void berechneComputerAnzahl() {
-
+        Random random = new Random();
+        this.computerAnzahl = random.nextInt(9);
     }
 
     public void berechneRunde(int spielerZahl) {
