@@ -11,7 +11,7 @@ public class GewinnModel {
     }
 
     public int getGesamtPunkte() {
-
+        return gesamtPunkte;
     }
 
     public int getComputerAnzahl() {
