@@ -2,12 +2,10 @@ package View;
 
 import javax.swing.*;
 
-import java.awt.event.ActionListener;
-
 public class GrafikFrame extends JFrame {
     private GrafikPanel panel;
 
-    public GrafikFrame(ActionListener controller) {
+    public GrafikFrame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel = new GrafikPanel();
         this.add(panel);
