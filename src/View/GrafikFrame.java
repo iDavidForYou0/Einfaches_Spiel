@@ -8,7 +8,7 @@ public class GrafikFrame extends JFrame {
     private GrafikPanel panel;
 
     public GrafikFrame(ActionListener controller) {
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel = new GrafikPanel();
         this.add(panel);
         this.setVisible(true);
