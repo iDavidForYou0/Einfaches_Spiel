@@ -14,32 +14,41 @@ public class GrafikPanel extends JPanel {
     private JButton nochEinmal;
 
     public GrafikPanel(){
-        setLayout(new BorderLayout(5, 5));
+        this.setLayout(new BorderLayout());
+        JPanel northPanel = new JPanel();
+        northPanel.setLayout(new GridLayout(3, 2, 4, 4));
+        northPanel.add(new JLabel("Rundenergebnis:", JLabel.CENTER));
+        northPanel.add(new JLabel("Gesamtpunkte:", JLabel.CENTER));
+        runde = new JLabel("Tippe eine Zahl von 1 - 9", JLabel.CENTER);
+        runde.setOpaque(true);
+        runde.setBackground(new Color(255, 255, 255));
+        gesamt = new JLabel("Gesamtpunkte: 30", JLabel.CENTER);
+        gesamt.setOpaque(true);
+        gesamt.setBackground(new Color(255, 255, 255));
+        northPanel.add(runde);
+        northPanel.add(gesamt);
+        northPanel.add(new JLabel("Deine Zahl:", JLabel.CENTER));
+        northPanel.add(new JLabel("Computer:", JLabel.CENTER));
 
-        JPanel mitte = new JPanel(new GridLayout(4, 2, 5, 5));
-
-        runde = erzeugeAnzeigeLabel("Tippe eine Zahl von 1 bis 9");
-        gesamt = erzeugeAnzeigeLabel("30");
-
-        spieler = erzeugeZahlenFeld();
-        computer = erzeugeZahlenFeld();
+        JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new GridLayout(1, 2, 4, 4));
+        spieler = new JTextField();
+        spieler.setHorizontalAlignment(JTextField.CENTER);
+        centerPanel.add(spieler);
+        computer = new JTextField();
+        computer.setHorizontalAlignment(JTextField.CENTER);
         computer.setEditable(false);
+        centerPanel.add(computer);
 
-        mitte.add(erzeugeUeberschrift("Rundenergebnis:"));
-        mitte.add(erzeugeUeberschrift("Gesamtpunkte:"));
-        mitte.add(runde);
-        mitte.add(gesamt);
-        mitte.add(erzeugeUeberschrift("Deine Zahl:"));
-        mitte.add(erzeugeUeberschrift("Computer:"));
-        mitte.add(spieler);
-        mitte.add(computer);
+        JPanel southPanel = new JPanel();
+        southPanel.setLayout(new FlowLayout());
+        nochEinmal = new JButton("Noch einmal");
+        nochEinmal.setEnabled(false);
+        southPanel.add(nochEinmal);
 
-        nochEinmal = new JButton("Noch Einmal!");
-        JPanel unten = new JPanel();
-        unten.add(nochEinmal);
-
-        add(mitte, BorderLayout.CENTER);
-        add(unten, BorderLayout.SOUTH);
+        this.add(northPanel, BorderLayout.NORTH);
+        this.add(centerPanel, BorderLayout.CENTER);
+        this.add(southPanel, BorderLayout.SOUTH);
     }
 
     private JLabel erzeugeUeberschrift(String text) {
@@ -54,7 +63,7 @@ public class GrafikPanel extends JPanel {
         return l;
     }
 
-    private JLabel erzeugeZahlenFeld() {
+    private JTextField erzeugeZahlenFeld() {
         JTextField f = new JTextField();
         f.setHorizontalAlignment(JTextField.CENTER);
         f.setFont(new Font("SansSerif", Font.BOLD, 36));

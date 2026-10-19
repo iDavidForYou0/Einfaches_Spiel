@@ -64,4 +64,10 @@ public class GewinnController {
             view.setRundenErgebnis(r > 0 ? "+" + r : String.valueOf(r));
         }
     }
+
+    public static void main(String[] args) {
+        GrafikFrame frame = new GrafikFrame();
+        new GewinnController(new GewinnModel(), frame);
+        frame.setVisible(true);
+    }
 }
