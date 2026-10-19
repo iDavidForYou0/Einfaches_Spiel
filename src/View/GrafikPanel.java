@@ -43,7 +43,6 @@ public class GrafikPanel extends JPanel {
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new FlowLayout());
         nochEinmal = new JButton("Noch einmal");
-        nochEinmal.setEnabled(false);
         southPanel.add(nochEinmal);
 
         this.add(northPanel, BorderLayout.NORTH);
