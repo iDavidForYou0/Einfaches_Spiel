@@ -63,6 +63,9 @@ public class GewinnController {
             int r = model.getRundenErgebnis();
             view.setRundenErgebnis(r > 0 ? "+" + r : String.valueOf(r));
         }
+
+        view.setEingabeAktiv(false);
+        view.setNochEinmalAktiv(true);
     }
 
     public static void main(String[] args) {

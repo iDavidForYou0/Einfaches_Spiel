@@ -48,6 +48,7 @@ public class GrafikPanel extends JPanel {
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new FlowLayout());
         nochEinmal = new JButton("Noch einmal");
+        nochEinmal.setEnabled(false);
         southPanel.add(nochEinmal);
 
         this.add(northPanel, BorderLayout.NORTH);
@@ -94,6 +95,8 @@ public class GrafikPanel extends JPanel {
         spieler.setText("");
         computer.setText("");
         runde.setText("Tippe eine Zahl von 1 bis 9");
+        setEingabeAktiv(true);
+        setNochEinmalAktiv(false);
         spieler.requestFocus();
     }
 
@@ -103,5 +106,13 @@ public class GrafikPanel extends JPanel {
 
     public void addNochEinmalListener(ActionListener l) {
         nochEinmal.addActionListener(l);
+    }
+
+    public void setEingabeAktiv(boolean aktiv) {
+        spieler.setEnabled(aktiv);
+    }
+
+    public void setNochEinmalAktiv(boolean aktiv) {
+        nochEinmal.setEnabled(aktiv);
     }
 }
