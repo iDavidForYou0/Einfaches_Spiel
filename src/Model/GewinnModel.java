@@ -50,4 +50,11 @@ public class GewinnModel {
     public boolean hatVerloren() {
         return this.gesamtPunkte <= 0;
     }
+
+    public void neuesSpiel() {
+        gesamtPunkte = 30;
+        rundenErgebnis = 0;
+        computerAnzahl = 0;
+        spielerAnzahl = 0;
+    }
 }

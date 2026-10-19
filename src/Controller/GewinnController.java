@@ -26,6 +26,10 @@ public class GewinnController {
         view.addNochEinmalListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (model.hatGewonnen() || model.hatVerloren()) {
+                    model.neuesSpiel();
+                    view.setGesamtPunkte("Gesamtpunkte: 30");
+                }
                 view.zuruecksetzen();
             }
         });
