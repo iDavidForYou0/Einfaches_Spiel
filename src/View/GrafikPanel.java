@@ -19,12 +19,15 @@ public class GrafikPanel extends JPanel {
         northPanel.setLayout(new GridLayout(3, 2, 4, 4));
         northPanel.add(new JLabel("Rundenergebnis:", JLabel.CENTER));
         northPanel.add(new JLabel("Gesamtpunkte:", JLabel.CENTER));
+
         runde = new JLabel("Tippe eine Zahl von 1 - 9", JLabel.CENTER);
         runde.setOpaque(true);
         runde.setBackground(new Color(255, 255, 255));
+
         gesamt = new JLabel("Gesamtpunkte: 30", JLabel.CENTER);
         gesamt.setOpaque(true);
         gesamt.setBackground(new Color(255, 255, 255));
+
         northPanel.add(runde);
         northPanel.add(gesamt);
         northPanel.add(new JLabel("Deine Zahl:", JLabel.CENTER));
@@ -32,9 +35,11 @@ public class GrafikPanel extends JPanel {
 
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridLayout(1, 2, 4, 4));
+
         spieler = new JTextField();
         spieler.setHorizontalAlignment(JTextField.CENTER);
         centerPanel.add(spieler);
+
         computer = new JTextField();
         computer.setHorizontalAlignment(JTextField.CENTER);
         computer.setEditable(false);
