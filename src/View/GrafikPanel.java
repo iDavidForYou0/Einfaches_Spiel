@@ -94,6 +94,7 @@ public class GrafikPanel extends JPanel {
         spieler.setText("");
         computer.setText("");
         runde.setText("Tippe eine Zahl von 1 bis 9");
+        setFarbe(Color.WHITE);
         spieler.requestFocus();
     }
 
@@ -103,5 +104,10 @@ public class GrafikPanel extends JPanel {
 
     public void addNochEinmalListener(ActionListener l) {
         nochEinmal.addActionListener(l);
+    }
+
+    public void setFarbe(Color farbe) {
+        runde.setBackground(farbe);
+        gesamt.setBackground(farbe);
     }
 }

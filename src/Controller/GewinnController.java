@@ -6,6 +6,7 @@ import View.GrafikPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 
 public class GewinnController {
     private GewinnModel model;
@@ -62,6 +63,7 @@ public class GewinnController {
         else {
             int r = model.getRundenErgebnis();
             view.setRundenErgebnis(r > 0 ? "+" + r : String.valueOf(r));
+            view.setFarbe(r > 0 ? Color.GREEN : Color.RED);
         }
     }
 
